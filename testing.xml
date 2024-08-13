@@ -7,7 +7,6 @@
             <class name="TC_Pages.TC2_Login"/>
             <class name="TC_Pages.TC3_ContactUs"/>
             <class name="TC_Pages.TC4_Products"/>
-            <class name="TC_Pages.TC4_Products"/>
         </classes>
     </test>
 </suite>
