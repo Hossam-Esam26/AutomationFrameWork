@@ -1,0 +1,49 @@
+package TC_Pages;
+
+import Data.Data;
+import Pages.HomePage;
+import Pages.Login;
+import TC_Base.TC_Driver;
+import io.qameta.allure.*;
+import org.testng.Assert;
+import org.testng.annotations.*;
+
+@Feature("Login Page")
+public class TC2_Login extends TC_Driver {
+    HomePage homePage;
+    Login login;
+
+    @BeforeMethod
+    public void setObject()
+    {
+        homePage = new HomePage(driver);
+        login = new Login(driver);
+    }
+
+    @Description("User will tries to login with valid data")
+    @Severity(SeverityLevel.CRITICAL)
+    @Owner("Hossam Esam")
+    @Link("https://www.automationexercise.com/login")
+    @Test
+    public void userWillLogInWithValidData()
+    {
+        homePage.clickOnSignupAndLoginButton();
+        Assert.assertEquals(login.loginText(),"Login to your account");
+        login.userWillLogInToHisAccount(Data.randomEmail);
+        homePage.clickOnLogoutButton();
+    }
+
+    @Description("User will tries to login with invalid data")
+    @Severity(SeverityLevel.CRITICAL)
+    @Owner("Hossam Esam")
+    @Link("https://www.automationexercise.com/login")
+    @Test(dependsOnMethods = "userWillLogInWithValidData")
+    public void userWillLogInWithInValidData()
+    {
+        login.userWillLogInToHisAccount(Data.dataClass("inValidEmail"));
+        Assert.assertEquals(login.errorMessageWithIncorrectEmail(),"Your email or password is incorrect!");
+    }
+
+
+
+}

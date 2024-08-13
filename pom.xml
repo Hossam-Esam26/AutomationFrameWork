@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>AutomationFramWork</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>22</maven.compiler.source>
+        <maven.compiler.target>22</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <Selenium-WebDriver>4.23.0</Selenium-WebDriver>
+        <TestNg>7.10.2</TestNg>
+        <JsonSimple>1.1.1</JsonSimple>
+        <commons-io>2.8.0</commons-io>
+        <AllureReports>2.29.0</AllureReports>
+        <aspectjweaver>1.9.22.1</aspectjweaver>
+        <jackson-databind>2.17.2</jackson-databind>
+    </properties>
+
+   <dependencies>
+       <dependency>
+           <groupId>org.seleniumhq.selenium</groupId>
+           <artifactId>selenium-java</artifactId>
+           <version>${Selenium-WebDriver}</version>
+       </dependency>
+
+       <dependency>
+           <groupId>org.testng</groupId>
+           <artifactId>testng</artifactId>
+           <version>${TestNg}</version>
+       </dependency>
+
+       <dependency>
+           <groupId>com.googlecode.json-simple</groupId>
+           <artifactId>json-simple</artifactId>
+           <version>${JsonSimple}</version>
+       </dependency>
+
+       <dependency>
+           <groupId>commons-io</groupId>
+           <artifactId>commons-io</artifactId>
+           <version>${commons-io}</version>
+       </dependency>
+
+       <dependency>
+           <groupId>io.qameta.allure</groupId>
+           <artifactId>allure-testng</artifactId>
+           <version>${AllureReports}</version>
+       </dependency>
+
+       <dependency>
+           <groupId>org.aspectj</groupId>
+           <artifactId>aspectjweaver</artifactId>
+           <version>${aspectjweaver}</version>
+           <scope>runtime</scope>
+       </dependency>
+
+       <dependency>
+           <groupId>com.fasterxml.jackson.core</groupId>
+           <artifactId>jackson-databind</artifactId>
+           <version>${jackson-databind}</version>
+       </dependency>
+
+   </dependencies>
+
+
+</project>
