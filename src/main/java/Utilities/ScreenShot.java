@@ -20,7 +20,7 @@ public class ScreenShot extends Driver{
 
     public static void takeScreenShot(String photoPath) {
         File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        String path = STR."ScreenShots/\{photoPath}.jpg";
+        String path = "ScreenShots/"+photoPath+".jpg";
         try {
             FileUtils.copyFile(screenshotFile, new File(path));
         } catch (IOException e) {
