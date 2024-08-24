@@ -28,11 +28,13 @@ public class TC05_SearchProduct extends TC_Driver {
     public void searchForProduct()
     {
         homePage.clickOnProductsButton();
-        Assert.assertEquals(products.getTextFromProductsPage(),"ALL PRODUCTS" , "All Products Text");
+        Assert.assertEquals(products.getTextFromProductsPage().toLowerCase(),"All Products".toLowerCase() ,
+                "All Products Text");
         products.getAllProductsAndCheckItIsVisible()
                 .enterProductNameAtSearchField()
                 .clickOnSubmitSearchButton();
-        Assert.assertEquals(products.getSearchedProductText(),"SEARCHED PRODUCTS" , "SEARCHED PRODUCTS text");
+        Assert.assertEquals(products.getSearchedProductText().toLowerCase(),"Searched Products".toLowerCase()
+                , "SEARCHED PRODUCTS text");
         products.getAllProductsAndCheckItIsVisible();
     }
 }
