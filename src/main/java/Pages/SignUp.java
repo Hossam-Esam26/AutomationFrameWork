@@ -1,8 +1,9 @@
 package Pages;
 
+import Data.DataClass;
 import Utilities.Driver;
 import Utilities.Actions;
-import Data.Data;
+import Data.ReadFromJson;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -155,29 +156,29 @@ public class SignUp extends Driver {
     }
     public void theUserSignInSuccessfully()
     {
-        enterYourNameField(Data.dataClass("Name"));
-        enterYourEmailAddress(Data.randomEmail);
+        enterYourNameField(DataClass.userName);
+        enterYourEmailAddress(DataClass.email);
         clickOnSignupButton();
         clickOnGender();
-        enterPassword(Data.dataClass("Password"));
-        selectDateOfBirth_Days(Data.dataClass("Day"));
-        selectDateOfBirth_Months(Data.dataClass("Month"));
-        selectDateOfBirth_Years(Data.dataClass("Year"));
-        enterYourFirstName(Data.dataClass("FirstName"));
-        enterYourLastName(Data.dataClass("LastName"));
-        enterYourAddress(Data.dataClass("Address"));
-        selectYourCountry(Data.dataClass("Country"));
-        enterYourState(Data.dataClass("State"));
-        enterYourCity(Data.dataClass("City"));
-        enterYourZipcode(Data.dataClass("ZipCode"));
-        enterYourMobileNumber(Data.dataClass("MobileNumber"));
+        enterPassword(DataClass.password);
+        selectDateOfBirth_Days(DataClass.day);
+        selectDateOfBirth_Months(DataClass.month);
+        selectDateOfBirth_Years(DataClass.year);
+        enterYourFirstName(DataClass.firstName);
+        enterYourLastName(DataClass.lastName);
+        enterYourAddress(DataClass.address);
+        selectYourCountry(DataClass.country);
+        enterYourState(DataClass.state);
+        enterYourCity(DataClass.city);
+        enterYourZipcode(DataClass.zipCode);
+        enterYourMobileNumber(DataClass.mobileNumber);
         clickOnCreateAccountButton();
     }
 
     public void userWillRegisterWithTheSameEmail()
     {
-        enterYourNameField(Data.dataClass("Name"));
-        enterYourEmailAddress(Data.randomEmail);
+        enterYourNameField(DataClass.userName);
+        enterYourEmailAddress(DataClass.email);
         clickOnSignupButton();
     }
 

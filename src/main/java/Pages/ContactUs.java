@@ -1,9 +1,9 @@
 package Pages;
 
+import Data.DataClass;
 import Utilities.Driver;
 import Utilities.Actions;
-import Data.Data;
-import com.beust.ah.A;
+import Data.ReadFromJson;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -80,10 +80,10 @@ public class ContactUs extends Driver {
 
     public void userWillContactUs(String filePath)
     {
-        enterYourName(Data.dataClass("Name"));
-        enterYourEmail(Data.randomEmail);
-        enterTheSubject(Data.dataClass("Subject"));
-        enterTheMessage(Data.dataClass("Message"));
+        enterYourName(DataClass.userName);
+        enterYourEmail(DataClass.email);
+        enterTheSubject(DataClass.subject);
+        enterTheMessage(DataClass.userMessage);
         uploadTheFile(filePath);
         clickOnSubmitButton();
     }

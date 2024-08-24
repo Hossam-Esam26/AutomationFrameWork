@@ -1,8 +1,9 @@
 package Pages;
 
+import Data.DataClass;
 import Utilities.Driver;
 import Utilities.Actions;
-import Data.Data;
+import Data.ReadFromJson;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 public class Login extends Driver {
@@ -50,7 +51,7 @@ public class Login extends Driver {
     public void userWillLogInToHisAccount(String Email)
     {
         enterYourEmail(Email);
-        enterYourPassword(Data.dataClass("Password"));
+        enterYourPassword(DataClass.password);
         clickOnLoginButton();
     }
 }

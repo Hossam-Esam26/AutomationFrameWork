@@ -8,7 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 
 @Feature("Register Page")
-public class TC1_SignUp extends TC_Driver {
+public class TC01_SignUp extends TC_Driver {
 
     HomePage homePage;
     SignUp signUp;

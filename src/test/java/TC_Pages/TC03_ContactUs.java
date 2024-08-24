@@ -11,7 +11,7 @@ import org.testng.asserts.SoftAssert;
 import java.nio.file.Paths;
 
 @Feature("Contact Us Page")
-public class TC3_ContactUs extends TC_Driver {
+public class TC03_ContactUs extends TC_Driver {
 
     HomePage homePage;
     ContactUs contactUs;

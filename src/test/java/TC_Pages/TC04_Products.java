@@ -10,7 +10,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 @Feature("Products Page")
-public class TC4_Products extends TC_Driver {
+public class TC04_Products extends TC_Driver {
     HomePage homePage;
     Products products;
     ProductDetails productDetails;

@@ -1,7 +1,9 @@
 package Pages;
 
+import Data.DataClass;
 import Utilities.Actions;
 import Utilities.Driver;
+import Utilities.ScreenShot;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,8 +18,11 @@ public class Products extends Driver {
     }
 
     private final By productsPageText = By.xpath("//h2 [text() = 'All Products']");
-    private final By allProducts = By.xpath("//div [@class = 'col-sm-4']");
+    private final By allProducts = By.xpath("//div[@class = 'features_items']/div [@class = 'col-sm-4']");
     private final By viewProductButton = By.xpath("//a[text() = 'View Product']");
+    private final By searchField = By.xpath("//input[@id = 'search_product']");
+    private final By submitSearchButton = By.xpath("//button[@id = 'submit_search']");
+    private final By searchedProductText = By.xpath("//h2[text() = 'Searched Products']");
 
 
     public String getTextFromProductsPage()
@@ -49,10 +54,31 @@ public class Products extends Driver {
         return this;
     }
 
+    public Products enterProductNameAtSearchField()
+    {
+        Actions.sendText(searchField , DataClass.productName);
+        return this;
+    }
+
+    public Products clickOnSubmitSearchButton()
+    {
+        Actions.clicker(submitSearchButton);
+        return this;
+    }
+
+    public String getSearchedProductText()
+    {
+        Actions.scrollToElement(searchedProductText);
+        ScreenShot.takeScreenShot("searchedProduct");
+        return driver.findElement(searchedProductText).getText();
+    }
+
     public void userOpenProductsPage()
     {
         getAllProductsAndCheckItIsVisible();
         clickOnViewProductButton();
     }
+
+
 
 }

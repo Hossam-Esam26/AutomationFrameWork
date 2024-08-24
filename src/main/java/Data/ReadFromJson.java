@@ -1,46 +1,15 @@
 package Data;
 
-import com.fasterxml.jackson.databind.ObjectReader;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.util.Random;
 
-public class Data {
+public class ReadFromJson {
     static String path = "src/test/java/DataForTest/Data.json";
     public static String randomEmail = generateEmail();
-
-
- /*   public static <T> T dataClass(Class<T> data) {
-        T instance = null;
-        try {
-            instance = data.getDeclaredConstructor().newInstance();
-        } catch (InstantiationException e) {
-            throw new RuntimeException(e);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
-        } catch (InvocationTargetException e) {
-            throw new RuntimeException(e);
-        } catch (NoSuchMethodException e) {
-            throw new RuntimeException(e);
-        }
-        ObjectMapper mapper = new ObjectMapper();
-        ObjectReader reader = mapper.readerForUpdating(instance);
-        File file = new File(path);
-        try {
-            reader.readValue(file);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        return instance;
-    }*/
-
 
     public static String dataClass (String KeyName) {
         JSONParser parser = new JSONParser();

@@ -3,10 +3,12 @@
 <suite name="SuiteOne">
     <test name="Test">
         <classes>
-            <class name="TC_Pages.TC1_SignUp"/>
-            <class name="TC_Pages.TC2_Login"/>
-            <class name="TC_Pages.TC3_ContactUs"/>
-            <class name="TC_Pages.TC4_Products"/>
+            <class name="TC_Pages.TC01_SignUp"/>
+            <class name="TC_Pages.TC02_Login"/>
+            <class name="TC_Pages.TC03_ContactUs"/>
+            <class name="TC_Pages.TC04_Products"/>
+            <class name="TC_Pages.TC05_SearchProduct"/>
+            <class name="TC_Pages.TC006_Subscription"/>
         </classes>
     </test>
 </suite>

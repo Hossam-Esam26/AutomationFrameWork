@@ -14,5 +14,6 @@
     "MobileNumber" : "1111111111",
     "inValidEmail" : "test#@google.com",
     "Subject" : "Test",
-    "Message" : "This message only for test"
+    "Message" : "This message only for test",
+    "ProductName" : "Men Tshirt"
 }
