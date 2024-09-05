@@ -2,8 +2,7 @@ package Pages;
 
 import Data.DataClass;
 import Utilities.Driver;
-import Utilities.Actions;
-import Data.ReadFromJson;
+import Utilities.Action;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 public class Login extends Driver {
@@ -22,19 +21,19 @@ public class Login extends Driver {
 
     public Login enterYourEmail(String email)
     {
-        Actions.sendText(emailAddressField , email);
+        Action.sendText(emailAddressField , email);
         return this;
     }
 
     public Login enterYourPassword(String password)
     {
-        Actions.sendText(passwordField , password);
+        Action.sendText(passwordField , password);
         return this;
     }
 
     public Login clickOnLoginButton()
     {
-        Actions.clicker(loginButton);
+        Action.clicker(loginButton);
         return this;
     }
 

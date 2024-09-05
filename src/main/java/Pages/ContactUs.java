@@ -2,8 +2,7 @@ package Pages;
 
 import Data.DataClass;
 import Utilities.Driver;
-import Utilities.Actions;
-import Data.ReadFromJson;
+import Utilities.Action;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -25,46 +24,46 @@ public class ContactUs extends Driver {
 
     public ContactUs enterYourName(String  name)
     {
-        Actions.sendText(nameField , name);
+        Action.sendText(nameField , name);
         return this;
     }
 
     public ContactUs enterYourEmail(String  email)
     {
-        Actions.sendText(emailField , email);
+        Action.sendText(emailField , email);
         return this;
     }
 
     public ContactUs enterTheSubject(String  subject)
     {
-        Actions.sendText(subjectField , subject);
+        Action.sendText(subjectField , subject);
         return this;
     }
 
     public ContactUs enterTheMessage(String  message)
     {
-        Actions.sendText(messageField , message);
+        Action.sendText(messageField , message);
         return this;
     }
 
     public ContactUs uploadTheFile(String  filePath)
     {
-        Actions.scrollToElement(uploadFile);
-        Actions.sendText(uploadFile , filePath);
+        Action.scrollToElement(uploadFile);
+        Action.sendText(uploadFile , filePath);
         return this;
     }
 
     public ContactUs clickOnSubmitButton()
     {
-        Actions.scrollToElement(submitButton);
-        Actions.clicker(submitButton);
+        Action.scrollToElement(submitButton);
+        Action.clicker(submitButton);
         driver.switchTo().alert().accept();
         return this;
     }
 
     public ContactUs clickOnHomeButton()
     {
-        Actions.clicker(homeButton);
+        Action.clicker(homeButton);
         return this;
     }
 

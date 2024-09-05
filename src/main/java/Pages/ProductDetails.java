@@ -1,6 +1,6 @@
 package Pages;
 
-import Utilities.Actions;
+import Utilities.Action;
 import Utilities.Driver;
 import Utilities.ScreenShot;
 import org.openqa.selenium.By;
@@ -16,7 +16,7 @@ public class ProductDetails extends Driver {
 
     public ProductDetails checkTheVisibilityOfDiv()
     {
-        Actions.elementIsDisplayed(productInformationDiv);
+        Action.elementIsDisplayed(productInformationDiv);
         return this;
     }
 

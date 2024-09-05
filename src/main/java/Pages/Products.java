@@ -1,7 +1,7 @@
 package Pages;
 
 import Data.DataClass;
-import Utilities.Actions;
+import Utilities.Action;
 import Utilities.Driver;
 import Utilities.ScreenShot;
 import org.openqa.selenium.By;
@@ -23,18 +23,21 @@ public class Products extends Driver {
     private final By searchField = By.xpath("//input[@id = 'search_product']");
     private final By submitSearchButton = By.xpath("//button[@id = 'submit_search']");
     private final By searchedProductText = By.xpath("//h2[text() = 'Searched Products']");
+    private final By continueShoppingButton = By.xpath("//button[text() = 'Continue Shopping']");
+    private final By viewCartLink = By.xpath("//u[text() = 'View Cart']");
 
 
     public String getTextFromProductsPage()
     {
         return driver.findElement(productsPageText).getText();
     }
+
     public Products getAllProductsAndCheckItIsVisible()
     {
-        List<WebElement> element = driver.findElements(allProducts);
-        if (!(element.isEmpty()))
+        List<WebElement> elements = driver.findElements(allProducts);
+        if (!(elements.isEmpty()))
         {
-            System.out.println("Products list visible successfully and products number is = " + element.size());
+            System.out.println("Products list visible successfully and products number is = " + elements.size());
         }else
         {
             Assert.fail();
@@ -49,36 +52,88 @@ public class Products extends Driver {
         {
             Random random = new Random();
             int randomIndex = random.nextInt(elements.size());
-            Actions.clicker(elements.get(randomIndex));
+            Action.clicker(elements.get(randomIndex));
         }
         return this;
     }
 
     public Products enterProductNameAtSearchField()
     {
-        Actions.sendText(searchField , DataClass.productName);
+        Action.sendText(searchField , DataClass.productName);
         return this;
     }
 
     public Products clickOnSubmitSearchButton()
     {
-        Actions.clicker(submitSearchButton);
+        Action.clicker(submitSearchButton);
         return this;
     }
 
     public String getSearchedProductText()
     {
-        Actions.scrollToElement(searchedProductText);
+        Action.scrollToElement(searchedProductText);
         ScreenShot.takeScreenShot("searchedProduct");
         return driver.findElement(searchedProductText).getText();
     }
 
-    public void userOpenProductsPage()
+    public Products addInCart()
     {
-        getAllProductsAndCheckItIsVisible();
-        clickOnViewProductButton();
+        List<WebElement> elements = driver.findElements(allProducts);
+        try {
+            if (!elements.isEmpty())
+            {
+                Random random = new Random();
+                int randomIndex = random.nextInt(elements.size());
+                By productElement = By.xpath("//div[@class = 'features_items']/div["+randomIndex+"]/div[1]");
+                By addProductElement = By.xpath("//div[@class = 'features_items']/div["+randomIndex+"]/div[1]/div[1]/div[2]/div[1]/a");
+                Action.scrollToElement(productElement);
+                Action.moveToElement_Hover(productElement);
+                Action.javaScriptClicker(addProductElement);
+            }
+        }catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            throw e;
+        }
+        return this;
     }
 
 
+    public Products clickOnContinueShoppingButton()
+    {
+        Action.clicker(continueShoppingButton);
+        return this;
+    }
+
+    public Products clickOnViewCartLink()
+    {
+        Action.clicker(viewCartLink);
+        return this;
+    }
+
+
+
+
+    //-------------many actions at one method to call it at the test file------------
+    public Products userOpenProductsPage()
+    {
+        getAllProductsAndCheckItIsVisible();
+        clickOnViewProductButton();
+        return this;
+    }
+
+    public Products addProductInCartAndContinueShopping()
+    {
+        addInCart();
+        clickOnContinueShoppingButton();
+        return this;
+    }
+
+    public Products addProductInCartAndViewCart()
+    {
+        addInCart();
+        clickOnViewCartLink();
+        return this;
+    }
 
 }

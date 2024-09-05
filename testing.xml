@@ -9,6 +9,7 @@
             <class name="TC_Pages.TC04_Products"/>
             <class name="TC_Pages.TC05_SearchProduct"/>
             <class name="TC_Pages.TC006_Subscription"/>
+            <class name="TC_Pages.TC007_AddProductInCart"/>
         </classes>
     </test>
 </suite>

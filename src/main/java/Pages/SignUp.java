@@ -2,8 +2,7 @@ package Pages;
 
 import Data.DataClass;
 import Utilities.Driver;
-import Utilities.Actions;
-import Data.ReadFromJson;
+import Utilities.Action;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -36,112 +35,112 @@ public class SignUp extends Driver {
 
     public SignUp enterYourNameField(String name)
     {
-        Actions.sendText(nameField , name);
+        Action.sendText(nameField , name);
         return this;
     }
 
     public SignUp enterYourEmailAddress(String email)
     {
-        Actions.sendText(emailAddressField , email);
+        Action.sendText(emailAddressField , email);
         return this;
     }
 
     public SignUp clickOnSignupButton()
     {
-        Actions.clicker( signupButton);
+        Action.clicker( signupButton);
         return this;
     }
 
     public SignUp clickOnGender()
     {
-        Actions.clicker( titleIcon);
+        Action.clicker( titleIcon);
         return this;
     }
 
     public SignUp enterPassword(String password)
     {
-        Actions.sendText(passwordField , password);
+        Action.sendText(passwordField , password);
         return this;
     }
 
     public SignUp selectDateOfBirth_Days(String days)
     {
-        Actions.select(daysDropdown , days);
+        Action.select(daysDropdown , days);
         return this;
     }
 
     public SignUp selectDateOfBirth_Months(String months)
     {
-        Actions.select(monthsDropdown , months);
+        Action.select(monthsDropdown , months);
         return this;
     }
 
     public SignUp selectDateOfBirth_Years(String years)
     {
-        Actions.select(yearsDropdown , years);
+        Action.select(yearsDropdown , years);
         return this;
     }
 
     public SignUp enterYourFirstName(String firstName)
     {
-        Actions.sendText(fNameField , firstName);
+        Action.sendText(fNameField , firstName);
         return this;
     }
 
     public SignUp enterYourLastName(String lastName)
     {
-        Actions.sendText(lNameField , lastName);
+        Action.sendText(lNameField , lastName);
         return this;
     }
 
     public SignUp enterYourAddress(String address)
     {
-        Actions.sendText(addressField , address);
+        Action.sendText(addressField , address);
         return this;
     }
 
     public SignUp selectYourCountry(String  country)
     {
-        Actions.select(countryDropdown , country);
+        Action.select(countryDropdown , country);
         return this;
     }
 
     public SignUp enterYourState(String state)
     {
-        Actions.sendText(stateField , state);
+        Action.sendText(stateField , state);
         return this;
     }
 
     public SignUp enterYourCity(String city)
     {
-        Actions.sendText(cityField , city);
+        Action.sendText(cityField , city);
         return this;
     }
 
     public SignUp enterYourZipcode(String zipcode)
     {
-        Actions.scrollToElement(zipcodeField);
-        Actions.sendText(zipcodeField , zipcode);
+        Action.scrollToElement(zipcodeField);
+        Action.sendText(zipcodeField , zipcode);
         return this;
     }
 
     public SignUp enterYourMobileNumber(String mobileNumber)
     {
-        Actions.scrollToElement(mobileNumberField);
-        Actions.sendText(mobileNumberField , mobileNumber);
+        Action.scrollToElement(mobileNumberField);
+        Action.sendText(mobileNumberField , mobileNumber);
         return this;
     }
 
     public SignUp clickOnCreateAccountButton()
     {
-        Actions.scrollToElement(createAccountButton);
-        Actions.clicker(createAccountButton);
+        Action.scrollToElement(createAccountButton);
+        Action.clicker(createAccountButton);
         return this;
     }
 
     public SignUp clickOnContinueButton()
     {
-        Actions.clicker(continueButton);
+        Action.clicker(continueButton);
         return this;
     }
 

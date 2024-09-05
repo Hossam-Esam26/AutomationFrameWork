@@ -12,7 +12,7 @@
         <maven.compiler.source>22</maven.compiler.source>
         <maven.compiler.target>22</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <Selenium-WebDriver>4.23.0</Selenium-WebDriver>
+        <Selenium-WebDriver>4.24.0</Selenium-WebDriver>
         <TestNg>7.10.2</TestNg>
         <JsonSimple>1.1.1</JsonSimple>
         <commons-io>2.8.0</commons-io>

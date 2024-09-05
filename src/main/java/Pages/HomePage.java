@@ -1,7 +1,7 @@
 package Pages;
 
 import Data.DataClass;
-import Utilities.Actions;
+import Utilities.Action;
 import Utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -23,43 +23,43 @@ public class HomePage extends Driver {
 
     public HomePage clickOnSignupAndLoginButton()
     {
-        Actions.clicker(signupAndLoginButton);
+        Action.clicker(signupAndLoginButton);
         return this;
     }
 
     public HomePage clickOnLogoutButton()
     {
-        Actions.clicker(logoutButton);
+        Action.clicker(logoutButton);
         return this;
     }
 
     public HomePage clickOnContactusButton()
     {
-        Actions.clicker(contactusButton);
+        Action.clicker(contactusButton);
         return this;
     }
 
     public HomePage clickOnProductsButton()
     {
-        Actions.clicker(productsButton);
+        Action.clicker(productsButton);
         return this;
     }
 
     public String getSubscriptionLabel()
     {
-        Actions.scrollToElement(subscriptionLabel);
+        Action.scrollToElement(subscriptionLabel);
         return driver.findElement(subscriptionLabel).getText();
     }
 
     public HomePage enterYourEmailToSubscribe()
     {
-        Actions.sendText(subscriptionField , DataClass.email);
+        Action.sendText(subscriptionField , DataClass.email);
         return this;
     }
 
     public HomePage clickOnSubscribeButton()
     {
-        Actions.clicker(subscribeButton);
+        Action.clicker(subscribeButton);
         return this;
     }
 
