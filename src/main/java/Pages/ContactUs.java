@@ -80,7 +80,7 @@ public class ContactUs extends Driver {
     public void userWillContactUs(String filePath)
     {
         enterYourName(DataClass.userName);
-        enterYourEmail(DataClass.email);
+        enterYourEmail(DataClass.emailOne);
         enterTheSubject(DataClass.subject);
         enterTheMessage(DataClass.userMessage);
         uploadTheFile(filePath);

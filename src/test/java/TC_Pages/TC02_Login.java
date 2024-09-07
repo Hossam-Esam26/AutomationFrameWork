@@ -29,7 +29,7 @@ public class TC02_Login extends TC_Driver {
     {
         homePage.clickOnSignupAndLoginButton();
         Assert.assertEquals(login.loginText(),"Login to your account");
-        login.userWillLogInToHisAccount(DataClass.email);
+        login.userWillLogInToHisAccount(DataClass.emailOne);
         homePage.clickOnLogoutButton();
     }
 

@@ -153,10 +153,10 @@ public class SignUp extends Driver {
     {
         return driver.findElement(emailExistValidationMessage).getText();
     }
-    public void theUserSignInSuccessfully()
+    public SignUp theUserSignInSuccessfully(String Email)
     {
         enterYourNameField(DataClass.userName);
-        enterYourEmailAddress(DataClass.email);
+        enterYourEmailAddress(Email);
         clickOnSignupButton();
         clickOnGender();
         enterPassword(DataClass.password);
@@ -172,12 +172,13 @@ public class SignUp extends Driver {
         enterYourZipcode(DataClass.zipCode);
         enterYourMobileNumber(DataClass.mobileNumber);
         clickOnCreateAccountButton();
+        return this;
     }
 
     public void userWillRegisterWithTheSameEmail()
     {
         enterYourNameField(DataClass.userName);
-        enterYourEmailAddress(DataClass.email);
+        enterYourEmailAddress(DataClass.emailOne);
         clickOnSignupButton();
     }
 

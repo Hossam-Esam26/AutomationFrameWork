@@ -43,6 +43,7 @@ public class Action extends Driver{
     public static void sendText(By locator , String value)
     {
         Wait.fluent().until(d ->{
+            driver.findElement(locator).clear();
             driver.findElement(locator).sendKeys(value);
             return true;
         });

@@ -10,6 +10,9 @@
             <class name="TC_Pages.TC05_SearchProduct"/>
             <class name="TC_Pages.TC006_Subscription"/>
             <class name="TC_Pages.TC007_AddProductInCart"/>
+            <class name="TC_Pages.TC008_VerifyProductQuantityInCart"/>
+            <class name="TC_Pages.TC009_RegisterWhileCheckout"/>
+            <class name="TC_Pages.TC010_RegisterBeforeCheckout"/>
         </classes>
     </test>
 </suite>

@@ -10,10 +10,11 @@
     "Country" : "Canada",
     "State" : "Test",
     "City" : "Cairo",
-    "ZipCode" : "11111",
-    "MobileNumber" : "1111111111",
+    "ZipCode" : "00000",
+    "MobileNumber" : "01155*9987",
     "inValidEmail" : "test#@google.com",
     "Subject" : "Test",
     "Message" : "This message only for test",
-    "ProductName" : "Men Tshirt"
+    "ProductName" : "Men Tshirt",
+    "ProductQuantity" : "4"
 }

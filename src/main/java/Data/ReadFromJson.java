@@ -9,7 +9,8 @@ import java.util.Random;
 
 public class ReadFromJson {
     static String path = "src/test/java/DataForTest/Data.json";
-    public static String randomEmail = generateEmail();
+    static String cardDataPath = "src/test/java/DataForTest/CardData.json";
+
 
     public static String dataClass (String KeyName) {
         JSONParser parser = new JSONParser();
@@ -26,7 +27,22 @@ public class ReadFromJson {
         return (String) jsonObject.get(KeyName);
     }
 
-    public static String generateEmail()
+    public static String cardData (String KeyName) {
+        JSONParser parser = new JSONParser();
+        Object obj = null;
+        try {
+            obj = parser.parse(new FileReader(cardDataPath));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+        JSONObject jsonObject = (JSONObject) obj;
+
+        return (String) jsonObject.get(KeyName);
+    }
+
+    public static String randomEmail()
     {
         String numbers = "123456789123456789";
         int userName_Length = 7;

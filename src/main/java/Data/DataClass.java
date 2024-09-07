@@ -3,7 +3,9 @@ package Data;
 public class DataClass {
 
     public static String userName = ReadFromJson.dataClass("Name");
-    public static String email = ReadFromJson.randomEmail;
+    public static String emailOne = ReadFromJson.randomEmail();
+    public static String emailTwo = ReadFromJson.randomEmail();
+    public static String emailThree = ReadFromJson.randomEmail();
     public static String password = ReadFromJson.dataClass("Password");
     public static String day = ReadFromJson.dataClass("Day");
     public static String month = ReadFromJson.dataClass("Month");
@@ -20,4 +22,5 @@ public class DataClass {
     public static String subject = ReadFromJson.dataClass("Subject");
     public static String userMessage = ReadFromJson.dataClass("Message");
     public static String productName = ReadFromJson.dataClass("ProductName");
+    public static String productQuantity = ReadFromJson.dataClass("ProductQuantity");
 }

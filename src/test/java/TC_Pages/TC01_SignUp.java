@@ -1,5 +1,6 @@
 package TC_Pages;
 
+import Data.DataClass;
 import Pages.HomePage;
 import Pages.SignUp;
 import TC_Base.TC_Driver;
@@ -28,7 +29,7 @@ public class TC01_SignUp extends TC_Driver {
     public void theUserWillRegisterSuccessfully()
     {
         homePage.clickOnSignupAndLoginButton();
-        signUp.theUserSignInSuccessfully();
+        signUp.theUserSignInSuccessfully(DataClass.emailOne);
         Assert.assertEquals(signUp.validationMessageAccountCreated(),("ACCOUNT CREATED!") ,
                 "validationMessageAccountCreated");
         signUp.clickOnContinueButton();

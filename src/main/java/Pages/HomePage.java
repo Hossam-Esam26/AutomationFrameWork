@@ -20,6 +20,9 @@ public class HomePage extends Driver {
     private final By subscriptionField = By.xpath("//input[@id = 'susbscribe_email']");
     private final By subscribeButton = By.xpath("//button[@id = 'subscribe']");
     private final By successSubscriptionMessage = By.xpath("//div[@class = 'alert-success alert']");
+    private final By cartButton = By.xpath("//a[text() = ' Cart']");
+    private final By deleteAccountButton = By.xpath("//a[text() = ' Delete Account']");
+
 
     public HomePage clickOnSignupAndLoginButton()
     {
@@ -53,13 +56,25 @@ public class HomePage extends Driver {
 
     public HomePage enterYourEmailToSubscribe()
     {
-        Action.sendText(subscriptionField , DataClass.email);
+        Action.sendText(subscriptionField , DataClass.emailOne);
         return this;
     }
 
     public HomePage clickOnSubscribeButton()
     {
         Action.clicker(subscribeButton);
+        return this;
+    }
+
+    public HomePage clickOnCartButton()
+    {
+        Action.clicker(cartButton);
+        return this;
+    }
+
+    public HomePage clickOnDeleteAccountButton()
+    {
+        Action.clicker(deleteAccountButton);
         return this;
     }
 
