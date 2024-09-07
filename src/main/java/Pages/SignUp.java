@@ -146,12 +146,12 @@ public class SignUp extends Driver {
 
     public String  validationMessageAccountCreated()
     {
-        return driver.findElement(accountCreatedMessage).getText();
+        return Action.getText(accountCreatedMessage);
     }
 
     public String validationMessageForExistingEmail()
     {
-        return driver.findElement(emailExistValidationMessage).getText();
+        return Action.getText(emailExistValidationMessage);
     }
     public SignUp theUserSignInSuccessfully(String Email)
     {

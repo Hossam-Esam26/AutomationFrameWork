@@ -29,7 +29,7 @@ public class Products extends Driver {
 
     public String getTextFromProductsPage()
     {
-        return driver.findElement(productsPageText).getText();
+        return Action.getText(productsPageText);
     }
 
     public Products getAllProductsAndCheckItIsVisible()
@@ -73,7 +73,7 @@ public class Products extends Driver {
     {
         Action.scrollToElement(searchedProductText);
         ScreenShot.takeScreenShot("searchedProduct");
-        return driver.findElement(searchedProductText).getText();
+        return Action.getText(searchedProductText);
     }
 
     public Products addInCart()

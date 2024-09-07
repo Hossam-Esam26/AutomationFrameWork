@@ -60,6 +60,8 @@ public class TC009_RegisterWhileCheckout extends TC_Driver {
         Assert.assertEquals(payment.getConfirmedOrderText().toLowerCase() ,
                 "Congratulations! Your order has been confirmed!".toLowerCase()
         ,"Order done successfully message");
+        payment.clickOnDownloadInvoiceButton();
+        signUp.clickOnContinueButton();
         homePage.clickOnDeleteAccountButton();
     }
 }

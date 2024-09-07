@@ -26,5 +26,7 @@ public class TC006_Subscription extends TC_Driver {
                 .clickOnSubscribeButton();
         Assert.assertTrue(homePage.getSuccessSubscriptionMessage().equalsIgnoreCase("You have been successfully subscribed!"),
                 "Successful subscription message");
+        homePage.clickOnScrollUpButton();
+        Assert.assertEquals(homePage.getCategoryText().toLowerCase(),"Category".toLowerCase() , "Category at home page");
     }
 }

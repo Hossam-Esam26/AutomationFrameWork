@@ -5,6 +5,7 @@ import Pages.HomePage;
 import Pages.Products;
 import TC_Base.TC_Driver;
 import io.qameta.allure.*;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -33,6 +34,8 @@ public class TC007_AddProductInCart extends TC_Driver {
         products.addProductInCartAndContinueShopping()
                 .addProductInCartAndViewCart();
         cart.verifyCardProducts()
-            .quantityTextButton();
+            .quantityTextButton()
+            .ClickOnDeleteProductButton();
+        Assert.assertEquals(cart.getCartEmptyText().toLowerCase() , "Cart is empty!".toLowerCase() , "Cart is empty text");
     }
 }

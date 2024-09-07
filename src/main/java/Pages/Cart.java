@@ -22,6 +22,8 @@ public class Cart extends Driver {
     private final By cartInfoContainer = By.xpath("//div[@id = 'cart_info']");
     private final By proceedToCheckoutButton = By.xpath("//a[text() = 'Proceed To Checkout']");
     private final By registerAndLoginButton = By.xpath("//u[text() = 'Register / Login']");
+    private final By deleteProductButton = By.xpath("//a[@class = 'cart_quantity_delete']");
+    private final By cartEmptyText = By.xpath("//b[text() = 'Cart is empty!']");
 
     public Cart verifyCardProducts()
     {
@@ -51,7 +53,7 @@ public class Cart extends Driver {
 
     public String getProductQuantity()
     {
-        return driver.findElement(productQuantityField).getText();
+        return Action.getText(productQuantityField);
     }
 
     public Cart verifyThatTheCartPageIsDisplayed()
@@ -76,5 +78,20 @@ public class Cart extends Driver {
     {
         Action.clicker(registerAndLoginButton);
         return this;
+    }
+
+    public Cart ClickOnDeleteProductButton()
+    {
+        List<WebElement> deleteButton = driver.findElements(deleteProductButton);
+        for (WebElement button : deleteButton)
+        {
+            Action.clicker(button);
+        }
+        return this;
+    }
+
+    public String getCartEmptyText()
+    {
+        return Action.getText(cartEmptyText);
     }
 }

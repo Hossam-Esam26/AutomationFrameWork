@@ -104,5 +104,16 @@ public class Action extends Driver{
         });
     }
 
+    public static String getText(By locator) {
+        return (String) Wait.fluent().until(d -> {
+            WebElement element = driver.findElement(locator);
+            if (element.isDisplayed()) {
+                return element.getText();
+            } else {
+                return null;
+            }
+        });
+    }
+
 
 }

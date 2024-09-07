@@ -69,12 +69,12 @@ public class ContactUs extends Driver {
 
     public String  textAtContactusPage()
     {
-        return driver.findElement(textAtContactusPage).getText();
+        return Action.getText(textAtContactusPage);
     }
 
     public String successSubmittedMessage()
     {
-        return driver.findElement(successSubmittedMessage).getText();
+        return Action.getText(successSubmittedMessage);
     }
 
     public void userWillContactUs(String filePath)

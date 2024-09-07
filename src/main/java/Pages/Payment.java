@@ -18,6 +18,7 @@ public class Payment extends Driver {
     private final By expiry_Year = By.xpath("//input[@name = 'expiry_year']");
     private final By submitButton = By.xpath("//button [ @id = 'submit']");
     private final By paymentDoneText = By.xpath("//p[contains(text() , 'Congratulations')]");
+    private final By downloadInvoiceButton = By.xpath("//a[text() = 'Download Invoice']");
 
     public Payment enterCardData()
     {
@@ -35,8 +36,14 @@ public class Payment extends Driver {
         return this;
     }
 
+    public Payment clickOnDownloadInvoiceButton()
+    {
+        Action.clicker(downloadInvoiceButton);
+        return this;
+    }
+
     public String getConfirmedOrderText()
     {
-        return driver.findElement(paymentDoneText).getText();
+        return Action.getText(paymentDoneText);
     }
 }

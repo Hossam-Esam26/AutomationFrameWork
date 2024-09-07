@@ -22,7 +22,11 @@ public class HomePage extends Driver {
     private final By successSubscriptionMessage = By.xpath("//div[@class = 'alert-success alert']");
     private final By cartButton = By.xpath("//a[text() = ' Cart']");
     private final By deleteAccountButton = By.xpath("//a[text() = ' Delete Account']");
-
+    private final By categoryText = By.xpath("//h2[text() = 'Category']");
+    private final By womenCategory = By.xpath("//div[@id = 'accordian']/div[1]/div[1]/h4/a");
+    private final By womenCategory_Dress = By.xpath("//div[@id = 'Women']//a[text() = 'Dress ']");
+    private final By categoryPageText = By.xpath("//div[@class = 'features_items']/h2");
+    private final By scrollUpButton = By.xpath("//a[@id = 'scrollUp']");
 
     public HomePage clickOnSignupAndLoginButton()
     {
@@ -51,7 +55,7 @@ public class HomePage extends Driver {
     public String getSubscriptionLabel()
     {
         Action.scrollToElement(subscriptionLabel);
-        return driver.findElement(subscriptionLabel).getText();
+        return Action.getText(subscriptionLabel);
     }
 
     public HomePage enterYourEmailToSubscribe()
@@ -80,6 +84,35 @@ public class HomePage extends Driver {
 
     public String getSuccessSubscriptionMessage()
     {
-        return driver.findElement(successSubscriptionMessage).getText();
+        return Action.getText(successSubscriptionMessage);
+    }
+
+    public String getCategoryText()
+    {
+        Action.scrollToElement(categoryText);
+        return Action.getText(categoryText);
+    }
+
+    public HomePage clickOnWomenCategory()
+    {
+        Action.clicker(womenCategory);
+        return this;
+    }
+
+    public HomePage clickOnWomenCategory_Dress()
+    {
+        Action.clicker(womenCategory_Dress);
+        return this;
+    }
+
+    public String getCategoryPageText()
+    {
+        return Action.getText(categoryPageText);
+    }
+
+    public HomePage clickOnScrollUpButton()
+    {
+        Action.clicker(scrollUpButton);
+        return this;
     }
 }

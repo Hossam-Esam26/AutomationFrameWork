@@ -39,12 +39,12 @@ public class Login extends Driver {
 
     public String loginText()
     {
-        return driver.findElement(loginText).getText();
+        return Action.getText(loginText);
     }
 
     public String errorMessageWithIncorrectEmail()
     {
-        return driver.findElement(errorMessageWithIncorrectMail).getText();
+        return Action.getText(errorMessageWithIncorrectMail);
     }
 
     public void userWillLogInToHisAccount(String Email)
