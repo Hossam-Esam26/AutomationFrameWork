@@ -47,6 +47,9 @@ public class Login extends Driver {
         return Action.getText(errorMessageWithIncorrectMail);
     }
 
+
+    //-------------many actions at one method to call it at the test file------------
+
     public void userWillLogInToHisAccount(String Email)
     {
         enterYourEmail(Email);

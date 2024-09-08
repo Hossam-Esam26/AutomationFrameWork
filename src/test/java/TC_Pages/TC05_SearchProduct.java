@@ -20,6 +20,7 @@ public class TC05_SearchProduct extends TC_Driver {
         homePage = new HomePage(driver);
         products = new Products(driver);
     }
+
     @Description("User will navigate to the products page and he will search for product")
     @Severity(SeverityLevel.CRITICAL)
     @Link("https://www.automationexercise.com/products")

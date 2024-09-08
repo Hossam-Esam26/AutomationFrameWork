@@ -115,6 +115,7 @@ public class Products extends Driver {
 
 
     //-------------many actions at one method to call it at the test file------------
+
     public Products userOpenProductsPage()
     {
         getAllProductsAndCheckItIsVisible();

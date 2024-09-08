@@ -48,6 +48,8 @@ public class ProductDetails extends Driver {
     }
 
 
+    //-------------many actions at one method to call it at the test file------------
+
     public void checkTheVisibilityOfElement()
     {
         checkTheVisibilityOfDiv();

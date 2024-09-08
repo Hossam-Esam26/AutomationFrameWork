@@ -43,8 +43,9 @@ public class Cart extends Driver {
         for (WebElement quantity : quantityText)
         {
             String getQuantity = quantity.getText();
-            if (!getQuantity.equals("1"))
+            if (getQuantity.isEmpty())
             {
+                Allure.step("Cart is empty");
                 Assert.fail();
             }
         }

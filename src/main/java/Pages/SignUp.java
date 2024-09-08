@@ -153,6 +153,10 @@ public class SignUp extends Driver {
     {
         return Action.getText(emailExistValidationMessage);
     }
+
+
+    //-------------many actions at one method to call it at the test file------------
+
     public SignUp theUserSignInSuccessfully(String Email)
     {
         enterYourNameField(DataClass.userName);

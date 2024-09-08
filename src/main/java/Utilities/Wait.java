@@ -16,11 +16,10 @@ public class Wait extends Driver{
 
     public static FluentWait fluent()
     {
-        FluentWait wait = new FluentWait(driver)
+        return new FluentWait(driver)
                 .withTimeout(Duration.ofSeconds(30))
                 .pollingEvery(Duration.ofMillis(500))
                 .ignoring(ElementNotInteractableException.class)
                 .ignoring(NoSuchElementException.class);
-        return wait;
     }
 }

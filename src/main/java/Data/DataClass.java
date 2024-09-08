@@ -5,7 +5,6 @@ public class DataClass {
     public static String userName = ReadFromJson.dataClass("Name");
     public static String emailOne = ReadFromJson.randomEmail();
     public static String emailTwo = ReadFromJson.randomEmail();
-    public static String emailThree = ReadFromJson.randomEmail();
     public static String password = ReadFromJson.dataClass("Password");
     public static String day = ReadFromJson.dataClass("Day");
     public static String month = ReadFromJson.dataClass("Month");

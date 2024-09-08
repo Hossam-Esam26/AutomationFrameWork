@@ -1,12 +1,8 @@
 package Utilities;
 
-
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
-
-import java.time.Duration;
 
 public class Action extends Driver{
 
@@ -76,14 +72,6 @@ public class Action extends Driver{
         });
     }
 
-    public static void scrollToElement(WebElement element)
-    {
-        Wait.fluent().until(d ->{
-            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-            return true;
-        });
-    }
-
     public static void moveToElement_Hover(By locator)
     {
         Wait.fluent().until(d ->{
@@ -93,15 +81,6 @@ public class Action extends Driver{
             return true;
         });
 
-    }
-
-    public static void moveToElement_Hover(WebElement element)
-    {
-        Wait.fluent().until(d ->{
-            Actions actions = new Actions(driver);
-            actions.moveToElement(element).build().perform();
-            return true;
-        });
     }
 
     public static String getText(By locator) {

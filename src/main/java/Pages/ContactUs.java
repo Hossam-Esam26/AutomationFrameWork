@@ -77,6 +77,10 @@ public class ContactUs extends Driver {
         return Action.getText(successSubmittedMessage);
     }
 
+
+
+    //-------------many actions at one method to call it at the test file------------
+
     public void userWillContactUs(String filePath)
     {
         enterYourName(DataClass.userName);
